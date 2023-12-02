@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
-import useMediaQuery from "./hooks/useMediaQuery";
-import Navbar from "./components/Navbar";
-import DotGroup from "./components/DotGroup";
-import Intro from "./components/Intro";
+import { useState, useEffect } from 'react'
+import useMediaQuery from './hooks/useMediaQuery'
+import Navbar from './components/Navbar'
+import DotGroup from './components/DotGroup'
+import Intro from './components/Intro'
 
 const App = () => {
-  const [selectedPage, setSelectedPage] = useState("home");
-  const isDesktop = useMediaQuery("(min-width: 1060px)");
-  const [isScrolledTop, setIsScrolledTop] = useState(true);
+  const [selectedPage, setSelectedPage] = useState('home')
+  const isDesktop = useMediaQuery('(min-width: 1060px)')
+  const [isScrolledTop, setIsScrolledTop] = useState(true)
 
-  useEffect(() => console.log(selectedPage), [selectedPage]);
+  useEffect(() => console.log(selectedPage), [selectedPage])
 
   useEffect(() => {
-    const scrollHandler = () => setIsScrolledTop(window.scrollY === 0);
-    window.addEventListener("scroll", scrollHandler);
+    const scrollHandler = () => setIsScrolledTop(window.scrollY === 0)
+    window.addEventListener('scroll', scrollHandler)
 
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, []);
+    return () => window.removeEventListener('scroll', scrollHandler)
+  }, [])
 
   return (
     <div className="App bg-deep-blue mt-[100px]">
@@ -42,7 +42,7 @@ const App = () => {
         <section className="h-[200px] w-full bg-red" id="contact"></section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
